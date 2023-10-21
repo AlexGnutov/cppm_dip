@@ -2,11 +2,10 @@
 #include <string>
 #include <sstream>
 
-#include "race_sim_lib/race.h"
-#include "race_sim_lib/air_race.h"
-#include "race_sim_lib/ground_race.h"
-#include "race_sim_lib/combined_race.h"
-
+#include "race.h"
+#include "air_race.h"
+#include "ground_race.h"
+#include "combined_race.h"
 
 enum class RaceType {
 	ground,
@@ -63,7 +62,6 @@ Race* race_factory(RaceType race_type)
 
 int main()
 {
-
 	setlocale(LC_ALL, "rus");
 
 	RaceType race_type;
@@ -143,12 +141,15 @@ int main()
 
 		std::string result_text = race->run();
 
+        delete race;
+
 		std::cout << "Результаты гонки:" << std::endl;
 		std::cout << result_text << std::endl;
 
 		int decision;
 		std::cout << "1. Провести ещё одну гонку" << std::endl;
 		std::cout << "2. Выйти" << std::endl;
+        std::cout << "Выберите действие: ";
 		std::cin >> decision;
 
 		if (decision == 1) {

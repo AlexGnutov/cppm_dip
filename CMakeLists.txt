@@ -1,16 +1,10 @@
 cmake_minimum_required(VERSION 3.23.0)
-project(racesim LANGUAGES CXX)
+project(race LANGUAGES CXX)
 
-if (MSVC)
-    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-endif()
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
-add_library(racesimlib SHARED)
-target_include_directories(racesimlib PRIVATE "{PROJECT_SOURCE_DIR}")
-add_subdirectory("race_sim_lib")
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
-add_executable(racesimapp)
-target_sources(racesimapp PRIVATE "race_sim_app/main.cpp")
-target_link_libraries(racesimapp PRIVATE racesimlib)
-
-install(TARGETS racesimlib FILE_SET HEADERS)
+add_subdirectory(lib)
+add_subdirectory(app)
