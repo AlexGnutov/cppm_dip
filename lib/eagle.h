@@ -5,7 +5,7 @@
 class Eagle : public AirVehicle
 {
 public:
-  Eagle() : AirVehicle(8, "Орёл") {}
+  Eagle();
 
-  double get_travel_time(double distance) override;
+  double get_travel_time(double distance) const;
 };

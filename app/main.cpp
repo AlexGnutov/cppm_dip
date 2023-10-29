@@ -7,6 +7,10 @@
 #include "ground_race.h"
 #include "combined_race.h"
 
+#ifdef  _WIN32
+#include <windows.h>
+#endif
+
 enum class RaceType {
 	ground,
 	air,
@@ -62,7 +66,11 @@ Race* race_factory(RaceType race_type)
 
 int main()
 {
-	setlocale(LC_ALL, "rus");
+#ifdef _WIN32
+    SetConsoleOutputCP(65001);
+#else
+    setlocale(LC_ALL, "rus");
+#endif
 
 	RaceType race_type;
 	double race_distance;

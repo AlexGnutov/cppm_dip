@@ -5,7 +5,7 @@
 class Broom : public AirVehicle
 {
 public:
-  Broom() : AirVehicle(20, "Метла") {}
+  Broom();
 
-  double get_travel_time(double distance) override;
+  double get_travel_time(double distance) const;
 };

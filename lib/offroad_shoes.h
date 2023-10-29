@@ -5,7 +5,7 @@
 class OffroadShoes : public GroundVehicle
 {
 public:
-  OffroadShoes() : GroundVehicle(6, 60, "Ботинки-вездеходы") {}
+  OffroadShoes();
   
-  double get_travel_time(double distance) override;
+  double get_travel_time(double distance) const;
 };

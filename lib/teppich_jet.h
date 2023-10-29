@@ -4,7 +4,7 @@
 
 class TeppichJet : public AirVehicle {
 public:
-  TeppichJet(): AirVehicle(10, "Ковёр-самолёт"){}
+  TeppichJet();
 
-  double get_travel_time(double distance) override;
+  double get_travel_time(double distance) const;
 };

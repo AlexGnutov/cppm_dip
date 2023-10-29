@@ -5,7 +5,7 @@
 class Camel : public GroundVehicle
 {
 public:
-  Camel() : GroundVehicle(10, 30, "Верблюд") {}
+  Camel();
   
-  double get_travel_time(double distance) override;
+  double get_travel_time(double distance) const;
 };

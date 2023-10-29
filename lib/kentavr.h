@@ -5,7 +5,7 @@
 class Kentavr : public GroundVehicle
 {
 public:
-  Kentavr() : GroundVehicle(15, 8, "Кентавр") {}
+  Kentavr();
 
-  double get_travel_time(double distance) override;
+  double get_travel_time(double distance) const;
 };

@@ -29,6 +29,7 @@ set(HEADERS
         air_race.h
         ground_race.h
         combined_race.h
+        air_vehicle.cpp
 )
 
 add_library(race_lib SHARED ${SOURCES} ${HEADERS})

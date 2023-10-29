@@ -1,6 +1,13 @@
 #include "ground_vehicle.h"
 
-double GroundVehicle::get_num_of_pauses(double inmove_time)
+GroundVehicle::GroundVehicle(int speed, int trip_limit, std::string name)
+        : Vehicle(VehicleClass::ground, speed, name), trip_limit(trip_limit) {}
+
+int GroundVehicle::get_num_of_pauses(double inmove_time) const
 {
-  return static_cast<int>(inmove_time / trip_limit);
+    int num_of_pauses = static_cast<int>(inmove_time / trip_limit);
+    if (num_of_pauses * trip_limit == inmove_time) {
+        return num_of_pauses - 1;
+    }
+    return num_of_pauses;
 };

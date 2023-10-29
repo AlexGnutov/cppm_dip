@@ -1,6 +1,8 @@
 #include "teppich_jet.h"
 
-double TeppichJet::get_travel_time(double distance)
+TeppichJet::TeppichJet(): AirVehicle(10, "Ковёр-самолёт"){}
+
+double TeppichJet::get_travel_time(double distance) const
 {
   int c;
   if (distance < 1000) {
